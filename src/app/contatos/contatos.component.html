@@ -1,0 +1,67 @@
+
+<!-- INÍCIO DO CONTEÚDO -->
+     <section class="content-header">
+
+     </section>
+
+     <section class="content">
+
+      <!-- <div class="jumbotron welcome-jumbotron">
+
+      </div>-->
+      <div class="row">
+          <div class="col-xs-12">
+            <div class="box box-solid">
+
+              <!-- /.box-header -->
+              <div class="box-body">
+                <h1 style="text-align:center">Lista de Contatos <span class="label label-info">{{contatos?.length}}</span></h1>
+                <div class="jumbotron welcome-jumbotron" *ngIf="contatos?.length == 0">
+                   <h1>Nenhum contato cadastrado!</h1>
+                   <a [routerLink]="['/cadastrarContato']"class="btn btn-primary btn-lg" href="main-restaurants.html">Cadastrar</a>
+                </div>
+                <br>
+                  <!-- LOOP PARA CARREGAR TODOS OS CONTATOS EM $scope.contatos -->
+                  <mt-contato [contatos]="contatos" (remove)="remove($event)" (editar)="editar($event)" *ngIf="!contatos?.length == 0"></mt-contato>
+
+              </div>
+              <!-- /.box-body -->
+            </div>
+          </div>
+          <!-- /.col-xs-12 -->
+
+      </div>
+      <div class="row">
+          <div class="col-xs-12">
+            <div class="box box-solid">
+
+              <!-- /.box-header -->
+              <div class="box-body" *ngIf="flag">
+                <h1 style="text-align:center">Editar</h1>
+                <br>
+                <div id="contato-form" >
+                  <form #form="ngForm">
+
+                    <div class="form-group col-md-6">
+                      <mt-input-container errorMessage="Campo obrigatório e com 5 caracteres" label="Nome">
+                        <input class="form-control" name="nome"[(ngModel)]="contato.nome" required placeholder="Nome" autocomplete="off" minlength="5">
+                      </mt-input-container>
+                    </div>
+                    <div class="form-group col-md-3">
+                      <mt-input-container errorMessage="Telefone Invalido" label="Telefone">
+                        <input class="form-control" name="telefone"  required [(ngModel)]="contato.telefone" placeholder="(00) 0000-0000" autocomplete="off" minlength="5">
+                      </mt-input-container>
+                    </div>
+                      <div class="form-group col-md-3">
+                          <button type="submit" class="btn btn-info" (click)="atualizarContato()" style="margin-top:23px">Atualizar</button>
+                      </div>
+                  </form>
+
+              </div>
+              </div>
+              <!-- /.box-body -->
+            </div>
+          </div>
+        </div>
+     </section>
+     <!-- FIM DO CONTEÚDO -->

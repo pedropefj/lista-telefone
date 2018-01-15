@@ -1,0 +1,43 @@
+<section class="content-header">
+</section>
+
+<section class="content">
+
+ <!-- <div class="jumbotron welcome-jumbotron">
+
+ </div>-->
+ <div class="row">
+     <div class="col-xs-12">
+       <div class="box box-solid">
+
+         <!-- /.box-header -->
+         <div class="box-body">
+           <h1 style="text-align:center">Cadastrar</h1>
+           <br>
+           <div id="contato-form">
+             <form #form="ngForm" novalidate>
+               <!--{{form.valid}}
+            {{form.value | json}}-->
+                 <div class="form-group col-md-6">
+                   <mt-input-container errorMessage="Campo obrigatório e com 5 caracteres" label="Nome">
+                     <input class="form-control" name="nome" [(ngModel)]="contato.nome"required placeholder="Nome" autocomplete="off" minlength="5">
+                   </mt-input-container>
+                 </div>
+                 <div class="form-group col-md-3">
+                   <mt-input-container errorMessage="Telefone Invalido" label="Telefone">
+                     <input class="form-control"  name="telefone"  required [(ngModel)]="contato.telefone" placeholder="(00) 0000-0000" autocomplete="off" minlength="5">
+                   </mt-input-container>
+                 </div>
+                 <div class="form-group col-md-3">
+                     <button type="submit" class="btn btn-primary" (click)="addContato()" style="margin-top:23px">Criar</button>
+                 </div>
+             </form>
+         </div>
+         </div>
+         <!-- /.box-body -->
+       </div>
+     </div>
+     <!-- /.col-xs-12 -->
+
+ </div>
+</section>
